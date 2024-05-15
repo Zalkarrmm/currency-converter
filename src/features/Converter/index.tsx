@@ -5,6 +5,7 @@ import { useAppDispatch } from '../../shared/lib/hooks/redux';
 import { convertCurrencies } from '../../entities/currencies/actions';
 import { Button } from '@mui/material';
 import cls from './style.module.scss'
+import { getSubstrings } from '../../shared/lib/utils/helper';
 
 interface FormData {
     conversion: string;
@@ -17,9 +18,8 @@ const CurrencyConverter: React.FC = () => {
     const dispatch = useAppDispatch()
 
     const onSubmit: SubmitHandler<FormData> = async (data) => {
-      const from = data.conversion.split(' ')[1].toUpperCase();
-      const to = data.conversion.split(' ')[3].toUpperCase();
-      const amount = parseFloat(data.conversion.split(' ')[0]);
+      const { amount, from, to } = getSubstrings(data.conversion)
+  
       dispatch(convertCurrencies({
         from,
         to
