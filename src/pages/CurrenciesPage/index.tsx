@@ -1,6 +1,10 @@
+import Currencies from "../../features/Currencies"
+
 const CurrenciesPage = () => {
   return (
-    <div>CurrenciesPage</div>
+    <div>
+      <Currencies /> 
+    </div>
   )
 }
 
