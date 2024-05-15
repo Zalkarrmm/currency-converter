@@ -6,7 +6,6 @@ export interface CurrenciesInitialState {
 }
 
 export interface ConvertParams {
-  value: number
   from: string
   to: string
 }

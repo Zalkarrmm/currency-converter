@@ -16,13 +16,10 @@ function App() {
   useEffect(() => {
     dispatch(getLatest(base_currency))
     dispatch(convertCurrencies({
-      value: 15,
       from: 'USD',
       to: 'EUR'
     }))
   }, [])
-
-  // fetch("https://openexchangerates.org/api/latest.json?app_id=88d7caa2e2ed40ddb92b5a03965c487d").then(r => console.log(r))
 
   return (
     <div className="App">
