@@ -33,7 +33,7 @@ const Currencies = () => {
           {
             currencies.map(({currency, rate}) => 
             <div className={cls.listItem}>
-              {currency}: {rate} 
+              1 {base_currency} = {rate} {currency}
               {
                 base_currency === currency ?
                   <span>Базовая валюта</span>
