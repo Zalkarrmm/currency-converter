@@ -1,29 +1,18 @@
-import { useEffect } from "react"
 import MainPage from "../pages/MainPage"
-import { 
-  useAppDispatch, 
-  useAppSelector 
-} from "../shared/lib/hooks/redux"
-import { convertCurrencies, getLatest } from "../entities/currencies/actions"
+import { Route, Routes } from "react-router-dom";
+import Header from "../widgets/Header";
+import CurrenciesPage from "../pages/CurrenciesPage";
 
 
 function App() {
 
-  const dispatch = useAppDispatch()
-
-  const { base_currency } = useAppSelector((state) => state.curencies)
-
-  useEffect(() => {
-    dispatch(getLatest(base_currency))
-    dispatch(convertCurrencies({
-      from: 'USD',
-      to: 'EUR'
-    }))
-  }, [])
-
   return (
     <div className="App">
-      <MainPage />
+      <Header />
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/currencies" element={<CurrenciesPage />} />
+      </Routes>
     </div>
   )
 }
