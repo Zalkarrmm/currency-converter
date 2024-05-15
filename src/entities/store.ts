@@ -7,6 +7,10 @@ const RootReducers = combineReducers({
 
 export const store = configureStore({
   reducer: RootReducers,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 })
 
 export type AppDispatch = typeof store.dispatch

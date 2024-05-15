@@ -1,13 +1,10 @@
 import axios, { InternalAxiosRequestConfig } from "axios"
-
-export const app_id = '1a2befa07b5741b2993bb422d6110ca1'
-
-const BASE_URL = 'https://openexchangerates.org/api/'
+const BASE_URL = 'https://v6.exchangerate-api.com/v6/2a2b3d1423ed96cc5053585f/'
 
 export const APIRoutesBase = {
   CURRENCIES: '/currencies',
   LATEST: '/latest',
-  CONVERT: '/convert'
+  CONVERT: '/pair'
 }
 
 const $api = axios.create({
