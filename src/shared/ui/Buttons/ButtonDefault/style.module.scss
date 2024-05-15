@@ -1,0 +1,23 @@
+.Button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s ease-in-out !important;
+  padding: 16px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+.disabled {
+  &:disabled {
+    background: rgb(167, 165, 165);
+    color: rgb(193, 193, 193);
+    cursor: not-allowed;
+  }
+}
+
+
+
