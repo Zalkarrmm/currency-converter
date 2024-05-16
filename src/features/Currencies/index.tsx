@@ -32,7 +32,7 @@ const Currencies = () => {
         <List className={cls.list} sx={{ width: '100%', bgcolor: 'background.paper' }}>
           {
             currencies.map(({currency, rate}) => 
-            <div className={cls.listItem}>
+            <div key={currency} className={cls.listItem}>
               1 {base_currency} = {rate} {currency}
               {
                 base_currency === currency ?
